@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "author": "Gabriel Velasco",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp32", "top": 100, "left": 200, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 410.7,
+      "left": 130.8,
+      "rotate": 180,
+      "attrs": { "temperature": "28.8", "humidity": "45" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 400.1,
+      "left": 378.7,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -77.8,
+      "left": 184.2,
+      "rotate": 270,
+      "attrs": { "hornColor": "#F0c609" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": -77.8,
+      "left": 69,
+      "rotate": 270,
+      "attrs": { "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo3",
+      "top": -77.8,
+      "left": -46.2,
+      "rotate": 270,
+      "attrs": { "hornColor": "#FF7200" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -108.8,
+      "left": 447.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp32:21", "lcd1:SDA", "orange", [ "h44.84", "v-234.6" ] ],
+    [ "esp32:22", "lcd1:SCL", "yellow", [ "h54.44", "v-196.3" ] ],
+    [ "lcd1:VCC", "esp32:3V3", "red", [ "h-115.2", "v196.1" ] ],
+    [ "lcd1:GND", "esp32:GND.1", "black", [ "h-124.8", "v307.2", "h-121.79" ] ],
+    [ "dht1:VCC", "esp32:3V3", "red", [ "v-288", "h31.81" ] ],
+    [ "dht1:GND", "esp32:GND.2", "black", [ "v-28.8", "h172.8", "v-255.2" ] ],
+    [ "dht1:SDA", "esp32:4", "blue", [ "v-19.2", "h163.1", "v-149.6" ] ],
+    [ "ldr1:VCC", "esp32:3V3", "red", [ "v0" ] ],
+    [ "ldr1:GND", "esp32:GND.1", "black", [ "v0" ] ],
+    [ "ldr1:AO", "esp32:34", "green", [ "v-96", "h-276.09" ] ],
+    [ "servo1:PWM", "esp32:23", "white", [ "v0" ] ],
+    [ "servo2:PWM", "esp32:19", "white", [ "v0" ] ],
+    [ "servo3:PWM", "esp32:18", "white", [ "v0" ] ],
+    [ "servo1:V+", "esp32:5V", "red", [ "h0.1", "v234.4" ] ],
+    [ "servo2:V+", "esp32:5V", "red", [ "v0" ] ],
+    [ "servo3:V+", "esp32:5V", "red", [ "v0" ] ],
+    [ "servo1:GND", "esp32:GND.2", "black", [ "v0" ] ],
+    [ "servo2:GND", "esp32:GND.2", "black", [ "v0" ] ],
+    [ "servo3:GND", "esp32:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
