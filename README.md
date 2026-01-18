@@ -5,3 +5,5 @@ As bibliotecas utilizadas foram
 LiquidCrystal I2C
 DHT sensor library
 ESP32Servo
+
+<img width="815" height="715" alt="image" src="https://github.com/user-attachments/assets/124840b2-848f-4e1f-966a-217d0a5c8f4c" />
